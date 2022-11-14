@@ -7,4 +7,8 @@ const app = express();
 dotenv.config();
 
 
-mongoose.connect(config.MONGO_URI)
+export const connection = mongoose.connect(config.MONGO_URI, () => {
+    console.log("Connection with mongodb was succesfull")
+})
+
+

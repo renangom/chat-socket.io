@@ -5,11 +5,12 @@ import dotenv from 'dotenv';
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 dotenv.config();
 
 
 
 
-app.listen(4000, () => {
-    console.log("App is listenning port 4000");
+app.listen(process.env.PORT, () => {
+    console.log(`App is listenning port ${process.env.PORT}`);
 })
